@@ -1,1 +1,25 @@
 # soliloquyspeech
+
+
+"title" (String),
+"id" (Int, can be omitted),
+"text" (String),
+"speaker" (String),
+"authors" (array of strings),
+"year" (String, can be omitted),
+"gender" (String, can be omitted which now means any gender),
+"age" (String, can be omitted),
+"ageRange" (String, can be omitted),
+"genre" (String, can be omitted),
+"time" (String, can be omitted),
+"location" (String, can be omitted),
+"description" (String, can be omitted),
+"lineform" (String, can be omitted),
+"firstLine" (String, can be omitted),
+"textAttributes" (array of dictionaries with String keys and values),
+"isOverdone" (Bool),
+"isBreeches" (Bool),
+"region" (String, can be omitted),
+"century" (String, can be omitted),
+"memorizationIgnoreRanges" - (array of strings, which are generated from NSRanges),
+"translator" (String, can be omitted)
