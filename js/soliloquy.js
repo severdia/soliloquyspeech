@@ -16,11 +16,11 @@ function calculateSpeechLength() {
 	switch (lineForm.value) {
 		case null:
 		case '':
-		case 'prose':
+		case 'Prose':
 		case 'any'://No of words*3/7
 			lengthInSeconds = countWords(speech) * 3 / 7;
 			break;
-		case 'verse'://No of lines*3.5
+		case 'Verse'://No of lines*3.5
 			lengthInSeconds = countLines(speech) * 3.5;
 			break;
 	}
@@ -62,6 +62,10 @@ function secondsToString(durationSeconds) {
  */
 function leftPad(number) {
 	return (number < 10 ? '0' : '') + number;
+}
+
+function clearForm() {
+	document.querySelector('form').reset();
 }
 
 function download() {
