@@ -11,3 +11,6 @@ small {
 label + span {
 	margin-left: 3px;
 }
+button.btn-link {
+	text-decoration: none;
+}
