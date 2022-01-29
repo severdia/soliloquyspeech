@@ -82,7 +82,7 @@ function download() {
 			fields[pair[0]] = pair[1];
 		}
 	}
-	let fileName = `${fields['speaker']}(${fields['title']}).pssoliloquy`;
+	let fileName = `${fields['speaker']} (${fields['title']}).pssoliloquy`;
 
 
 	let outputObject = {
@@ -100,12 +100,14 @@ function download() {
 				'NS.objects': [],
 				$class: {}
 			},
-			{
-				$classname: 'NSDictionary',
-				$classes: ['NSDictionary', 'NSObject']
-			}
+			// {
+			// 	$classname: 'NSDictionary',
+			// 	$classes: ['NSDictionary', 'NSObject']
+			// }
 		]
 	};
+
+	fields.id = 100;
 
 	let uid = 2;
 	Object.keys(fields).forEach(() => {
