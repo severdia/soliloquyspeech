@@ -83,7 +83,7 @@ function download() {
 
 	let outputObject = {
 		$version: 100000,
-		$archiver: "NSKeyedARchiver",
+		$archiver: "NSKeyedArchiver",
 		$top: {
 			root: {
 				CF$UID: 1
@@ -95,6 +95,10 @@ function download() {
 				'NS.keys': [],
 				'NS.objects': [],
 				$class: {}
+			},
+			{
+				$classname: 'NSDictionary',
+				$classes: ['NSDictionary', 'NSObject']
 			}
 		]
 	};
