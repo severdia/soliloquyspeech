@@ -138,6 +138,13 @@ function download() {
 		outputObject.$objects.push(field);
 	});
 
+	outputObject.$objects.push(
+		{
+			$classname: 'NSDictionary',
+			$classes: ['NSDictionary', 'NSObject']
+		}
+	);
+
 
 	// let testOutputObject = {
 	// 	$version: 100000,
