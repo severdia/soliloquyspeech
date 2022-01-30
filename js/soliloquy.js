@@ -1,5 +1,5 @@
 
-const bplist = window.bpListCreator;
+// const bplist = window.bpListCreator;
 
 document.getElementById('lineForm').addEventListener('input', () => {
 	calculateSpeechLength();
@@ -85,6 +85,9 @@ function download() {
 	let fileName = `${fields['speaker']} (${fields['title']}).pssoliloquy`;
 
 
+
+
+
 	let outputObject = {
 		$version: 100000,
 		$archiver: "NSKeyedArchiver",
@@ -106,6 +109,8 @@ function download() {
 			// }
 		]
 	};
+
+
 
 	fields.id = 100;
 
@@ -133,9 +138,88 @@ function download() {
 		outputObject.$objects.push(field);
 	});
 
-	let bdata = bplist(outputObject);
 
-	saveByteArray(fileName, bdata);
+	// let testOutputObject = {
+	// 	$version: 100000,
+	// 	$archiver: "NSKeyedArchiver",
+	// 	$top: {
+	// 		root: {
+	// 			CF$UID: 1
+	// 		}
+	// 	},
+	// 	$objects: [
+	// 		'$null',
+	// 		{
+	// 			'NS.keys': [
+	// 				{ CF$UID: 2 },
+	// 				{ CF$UID: 3 },
+	// 				{ CF$UID: 4 },
+	// 				{ CF$UID: 5 },
+	// 				{ CF$UID: 6 },
+	// 				{ CF$UID: 7 },
+	// 				{ CF$UID: 8 },
+	// 				{ CF$UID: 9 },
+	// 				{ CF$UID: 10 },
+	// 				{ CF$UID: 11 },
+	// 				{ CF$UID: 12 },
+	// 			],
+	// 			'NS.objects': [
+	// 				{ CF$UID: 13 },
+	// 				{ CF$UID: 14 },
+	// 				{ CF$UID: 16 },
+	// 				{ CF$UID: 13 },
+	// 				{ CF$UID: 17 },
+	// 				{ CF$UID: 14 },
+	// 				{ CF$UID: 18 },
+	// 				{ CF$UID: 19 },
+	// 				{ CF$UID: 20 },
+	// 				{ CF$UID: 14 },
+	// 				{ CF$UID: 21 },
+	// 			],
+	// 			$class:
+	// 				{ CF$UID: 22 }
+	// 		},
+
+
+	// 		'isBreeches',
+	// 		'textAttributes',
+	// 		'speaker',
+	// 		'isOverdone',
+	// 		'id',
+	// 		'memorizationIgnoreRanges',
+	// 		'gender',
+	// 		'genre',
+	// 		'text',
+	// 		'authors',
+	// 		'title',
+	// 		false,
+	// 		{
+	// 			'NS.objects': [],
+	// 			$class: { CF$UID: 15 },
+	// 		},
+	// 		{
+	// 			$classname: 'NSArray',
+	// 			$classes: ['NSArray', 'NSObject']
+	// 		},
+	// 		'Test character name',
+	// 		16,
+	// 		'male',
+	// 		'comedy',
+	// 		'Test speech goes here',
+	// 		'Test play name',
+	// 		{
+	// 			$classname: 'NSDictionary',
+	// 			$classes: ['NSDictionary', 'NSObject']
+	// 		}
+	// 	],
+
+	// };
+
+	let data = window.plist.build(outputObject);
+
+	// console.log(data);
+
+	saveByteArray(fileName, data);
 
 }
 
