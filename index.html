@@ -13,45 +13,57 @@
 <body id="body">
     <form id="fields-container" class="container">
         <div class="row">
-            <h1>Create Soliloquy Monologue</h1>
-        </div>
-        <div class="row">
-            <div class="col">
-                <h5>Play Details</h5>
+            <h2 class="mt-5 mb-1 ps-0">Create Soliloquy Monologue</h2>
+            <div class="col ps-0">
+            	<small><a href="https://apps.apple.com/us/app/soliloquy-pro/id1029313343" target="_blank">Download Soliloquy Pro &#187;</a></small>
             </div>
-            <div class="col  text-end">
+            <div class="col text-end mb-3">
                 <button type="button" class="btn btn-link btn-sm" onclick="clearForm()">Clear</button> <button type="button" class="btn btn-outline-primary" onclick="download()">Download</button>
             </div>
-            <div class="mb-3">
-                <label for="playName" class="form-label">Play Name</label><span class="red">*</span>
-                <input type="text" class="form-control form-control-lg" id="playName" name="title" required>
-            </div>
-            <div class="mb-3">
-                <label for="characterName" class="character-name">Character Name</label><span class="red">*</span>
-                <input type="text" class="form-control form-control-lg" id="characterName" name="speaker" required>
-            </div>
-            <div class="mb-3">
-                <label for="speech" class="form-label">Speech</label><span class="red">*</span>
-                <textarea id="speech" class="form-control" id="speech" rows="6" name="text" required></textarea>
-            </div>
+        </div>
+        
+         <div class="row">
+         	 <div class="col-6 ps-0">
+         		<label for="playName" class="form-label">Play Name</label><span class="red">*</span>
+            	<input type="text" class="form-control form-control-lg" id="playName" name="title" required>
+			</div>
+			<div class="col-6">
+				 <label for="characterName" class="form-label character-name">Character Name</label><span class="red">*</span>
+				<input type="text" class="form-control form-control-lg" id="characterName" name="speaker" required>
+			 </div>
+        </div>
+
+         <div class="row">
+			<div class="col ps-0 mt-4">
+				<label for="speech" class="form-label mb-0 mt-2">Speech</label><span class="red">*</span>
+			</div>
+			<div class="col-3 mt-4">
+				<div class="text-end">
+					 <label for="lengthTime" class="form-label d-inline text-end">Length</label>
+					<input id="speechLength" type="text" readonly class="form-control-plaintext d-inline text-end" id="lengthTime" value="00:00" name="time"></div>
+			</div>
         </div>
         <div class="row">
-            <hr class="mt-3 mb-4" />
-            <h5>Additional Details</h5>
+        	 <textarea id="speech" class="form-control" id="speech" rows="6" name="text" required></textarea>
+        </div>
 
-            <div class="col">
+        <div class="row">
+            <hr class="mt-3 mb-4" />
+            <h5 class="mt-1 mb-3 ps-0">Optional Details</h5>
+
+            <div class="col ps-0">
                 <div class="mb-3">
-                    <label for="authorName" class="form-label">Author Name</label>
+                    <label for="authorName" class="form-label">Author(s)</label>
                     <input type="text" class="form-control" id="authorName" name="author">
                 </div>
             </div>
             <div class="col">
                 <div class="mb-3">
-                    <label for="genre" class="form-label">Play Genre</label>
+                    <label for="genre" class="form-label">Genre</label>
                     <select class="form-select" aria-label=".form-select-sm" name="genre">
+                    	<option value="All" selected>Any</option>
                         <option value="DRAMA">Drama</option>
                         <option value="COMEDY">Comedy</option>
-                        <option value="All" selected>Any</option>
                     </select>
                 </div>
             </div>
@@ -65,7 +77,6 @@
                 <div class="mb-3">
                     <label for="region" class="form-label">Region / Country</label>
                     <select class="form-select" aria-label=".form-select-sm" name="region">
-                        <option selected value>Select region/country for this play...</option>
                         <option value="Belgium">Belgium</option>
                         <option value="England">England</option>
                         <option value="France">France</option>
@@ -80,28 +91,28 @@
                         <option value="Spain">Spain</option>
                         <option value="Sweden">Sweden</option>
                         <option value="United States">United States</option>
-                        <option value="Other">Other</option>
+                        <option value="Other" selected>Other</option>
                     </select>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
+            <div class="col ps-0">
                 <div class="mb-3">
-                    <label for="gender" class="form-label">Character Gender</label>
+                    <label for="gender" class="form-label">Gender</label>
                     <select class="form-select" aria-label=".form-select-sm" name="gender">
+                        <option value="All" selected>Any / Non-binary</option>
                         <option value="Female">Female</option>
                         <option value="Male">Male</option>
-                        <option value="All" selected>Any / Non-binary</option>
                     </select>
                 </div>
             </div>
             <div class="col">
                 <div class="mb-3">
-                    <label for="ageRange" class="form-label">Character Age Range</label>
+                    <label for="ageRange" class="form-label">Age Range</label>
                     <select class="form-select" aria-label=".form-select-sm" name="ageRange">
-                        <option selected value>Select age range...</option>
+                        <option selected value>Any</option>
                         <option value="Teen">Teen</option>
                         <option value="Young Adult">Young Adult</option>
                         <option value="Mature Adult">Mature Adult</option>
@@ -112,31 +123,23 @@
                 <div class="mb-3">
                     <label for="lineForm" class="form-label">Speech Line Form</label>
                     <select id="lineForm" class="form-select" aria-label=".form-select-sm" name="lineform">
-                        <option selected value>Select line form...</option>
+						<option value="any" selected>Any / None</option>
                         <option value="Prose">Prose</option>
                         <option value="Verse">Verse</option>
-                        <option value="any">Any / None</option>
                     </select>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="mb-3">
+            <div class="mb-3 ps-0">
                 <label for="description" class="form-label">Description / Setting</label>
                 <input type="" class="form-control" id="description" name="description">
             </div>
         </div>
 
         <div class="row">
-            <div class="mb-3 row">
-                <label for="lengthTime" class="col-sm-4 col-form-label">Speech Length</label>
-                <div class="col-sm-10">
-                    <input id="speechLength" type="text" readonly class="form-control-plaintext" id="lengthTime" value="00:00" name="time">
-                </div>
-                <small>(Automatically calculated based on speech length)</small>
-            </div>
-            <div class="col  text-end">
+            <div class="col text-end">
                 <button type="button" class="btn btn-link btn-sm" onclick="clearForm()">Clear</button> <button type="button" class="btn btn-outline-primary" onclick="download()">Download</button>
             </div>
         </div>

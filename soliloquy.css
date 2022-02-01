@@ -1,16 +1,25 @@
 body {
     background: #f5f5f5;
 }
-
 small {
 	font-size: 90%;
 	color: grey;
 }
-.red { color: red }
-
+h5 {
+	color: rgb(145,145,145);
+	padding-left: 0;
+}
+.red { 
+	color: red;
+}
 label + span {
 	margin-left: 3px;
 }
 button.btn-link {
 	text-decoration: none;
 }
+#speechLength{
+	width: 50px;
+}
+
+
